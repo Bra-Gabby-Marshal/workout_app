@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:workout_app/screens/home_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -28,7 +29,7 @@ class _WelcomeViewState extends State<WelcomeView> {
           ),
         ),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -75,7 +76,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                   Text(
                     "we want to know more about you, follow the next steps\n to complete the information",
                     style: GoogleFonts.lato(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
@@ -128,7 +129,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                                       "I have never trained",
                                       style: GoogleFonts.lato(
                                         color: Colors.white,
-                                        fontSize: 12,
+                                        fontSize: 14,
                                       ),
                                     ),
                                   ],
@@ -144,7 +145,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 40.0, left: 40.0),
+              padding: const EdgeInsets.all(40.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -153,23 +154,31 @@ class _WelcomeViewState extends State<WelcomeView> {
                     style: GoogleFonts.lato(
                       color: Colors.white30,
                       fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Container(
-                    width: 139,
-                    height: 39,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF40D876),
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Next",
-                        style: GoogleFonts.lato(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomeView()),
+                      );
+                    },
+                    child: Container(
+                      width: 139,
+                      height: 39,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF40D876),
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Next",
+                          style: GoogleFonts.lato(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
